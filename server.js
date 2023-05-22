@@ -4,7 +4,7 @@ const path = require('path');
 
 // Create an instance of Express.js
 const app = express();
-const PORT = 3000; // Port number where the server will listen
+const PORT = process.env.PORT || 3001 // Port number where the server will listen
 
 // Middleware setup
 // Configure middleware to parse incoming request bodies
@@ -82,6 +82,6 @@ app.get("*", (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
